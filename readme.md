@@ -1,40 +1,97 @@
-# Projet de Gestion de Facturation
+# 📊 Système de Gestion de Facturation
 
-## À propos
+##  À propos
 
-Je suis actuellement en alternance et je finis mon parcours cet été. J'ai eu la chance de vraiment bien m'intégrer dans mon entreprise et d'arriver à boucler mes tâches sans trop de difficultés. Cela dit, c'est un peu dommage que je n'aie pas pu consacrer plus de temps à ce projet avec la charge de l'alternance et mes autres projets d'études qui s'accumulent.
+J'aurais vraiment aimé avoir plus de temps pour enrichir ce projet avec davantage de fonctionnalités :
+- Tests automatisés
+- Authentification et permissions
+- Export PDF des factures
+- Dashboard analytique
+- Paiements intégrés
 
-Ce projet reste néanmoins une bonne base de système de facturation développée avec Django. J'aimerais bien pouvoir en parler plus en détail lors d'un entretien et vous montrer les différentes réalisations que j'ai mises en place - ça me permettrait de mieux prouver mes compétences qu'en regardant simplement le code sur un écran.
-
-## Fonctionnalités
-
-- Gestion des produits
-- Création et suivi des factures
-- Interface d'administration
-
-## Stack technique
-
-- **Backend** : Django + Django REST Framework
-- **Base de données** : SQLite
-- **Frontend** : HTML/CSS
-- **Documentation API** : Swagger (drf-spectacular)
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
-
-## Documentation API
-
-La documentation interactive de l'API est disponible sur :
-- **Swagger UI** : `http://localhost:8000/api/docs/`
-- **Schema OpenAPI** : `http://localhost:8000/api/schema/`
-
-Vous pouvez y tester directement les endpoints et voir tous les paramètres disponibles.
+Malgré ces limitations, ce projet me permet de montrer mes compétences fondamentales en développement web. J'aimerais en discuter lors d'un entretien pour développer sur l'architecture, les choix techniques et mes ambitions pour l'avenir.
 
 ---
 
-J'ai hâte de pouvoir discuter de ce projet et de mes autres travaux. Merci pour votre considération ! 😊
+##  Fonctionnalités principales
+###  Gestion des Produits
+###  Création et Suivi des Factures
+###  API REST avec Documentation Interactive
+###  Interface Moderne et Responsive
+
+---
+
+##  Stack technique
+
+| Composant | Technologie |
+|-----------|-------------|
+| **Backend** | Django |
+| **Documentation API** |  Swagger UI |
+| **Base de données** | SQLite3 |
+| **Frontend** | HTML5 + CSS3 |
+
+---
+
+## 🚀 Installation et Lancement
+
+### Prérequis
+- Python 3.9+
+- pip ou conda
+
+### Étapes
+
+```bash
+
+cd trustia-test-technique
+
+python -m venv venv
+
+source venv/bin/activate  # Sur Windows: venv\Scripts\activate
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
+```
+
+L'application sera disponible sur `http://localhost:8000`
+
+---
+
+## 📚 Documentation API
+
+### Accès à la documentation interactive
+
+La documentation complète de l'API est disponible via Swagger UI :
+
+- **Swagger UI** : [http://localhost:8000/api/docs/](http://localhost:8000/api/docs/)
+
+---
+
+##  Aperçu de l'application
+
+### Page d'accueil et Navigation
+![Page d'accueil](https://via.placeholder.com/800x400?text=Ajouter+votre+image+ici)
+*Remplacez ce lien par l'URL de votre screenshot*
+
+### Gestion des Produits
+![Liste des produits](https://via.placeholder.com/800x400?text=Liste+des+produits)
+*Remplacez ce lien par l'URL de votre screenshot*
+
+### Création de Facture
+![Création facture](https://via.placeholder.com/800x400?text=Créer+une+facture)
+*Remplacez ce lien par l'URL de votre screenshot*
+
+### Détail d'une Facture
+![Détail facture](https://via.placeholder.com/800x400?text=Détail+de+la+facture)
+*Remplacez ce lien par l'URL de votre screenshot*
+
+### Documentation Swagger
+![Swagger API](https://via.placeholder.com/800x400?text=Documentation+Swagger)
+*Remplacez ce lien par l'URL de votre screenshot*
+
+### Autre
+
+
+**Merci de votre intérêt ! 🙏**
