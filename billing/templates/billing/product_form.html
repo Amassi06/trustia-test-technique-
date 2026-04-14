@@ -1,11 +1,52 @@
 {% extends 'billing/base.html' %}
 
 {% block content %}
-<h1>{% if object %}Modifier{% else %}Créer{% endif %} un produit</h1>
+<div class="mb-6">
+  <a href="{% url 'billing:product_list' %}" class="text-blue-600 hover:text-blue-800 font-medium">&larr; Retour aux produits</a>
+</div>
 
-<form method="post">
+<h1 class="text-3xl font-bold text-gray-900 mb-6">{% if object %}Modifier le produit{% else %}Créer un produit{% endif %}</h1>
+
+<form method="post" class="bg-white rounded-lg shadow p-6 max-w-md">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Enregistrer</button>
+  
+  <div class="space-y-4">
+    {% for field in form %}
+      <div>
+        <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ field.label }}</label>
+        {% if field.help_text %}
+          <p class="text-xs text-gray-500 mb-1">{{ field.help_text|safe }}</p>
+        {% endif %}
+        {% if field.errors %}
+          <div class="text-red-600 text-sm mb-2">{{ field.errors }}</div>
+        {% endif %}
+        {{ field }}
+        <style>
+          .fieldWrapper input, .fieldWrapper textarea, .fieldWrapper select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+          }
+          .fieldWrapper input:focus, .fieldWrapper textarea:focus, .fieldWrapper select:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #3b82f6;
+            border-color: transparent;
+          }
+        </style>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="mt-6 flex gap-4">
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition">
+      ✓ Enregistrer
+    </button>
+    <a href="{% url 'billing:product_list' %}" class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-6 rounded-lg transition">
+      Annuler
+    </a>
+  </div>
 </form>
 {% endblock %}
