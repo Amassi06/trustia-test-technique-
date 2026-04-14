@@ -13,29 +13,19 @@
   <div class="space-y-4">
     {% for field in form %}
       <div>
-        <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ field.label }}</label>
+        <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+          {{ field.label }}
+          {% if field.field.required %}
+            <span class="text-red-500">*</span>
+          {% endif %}
+        </label>
         {% if field.help_text %}
           <p class="text-xs text-gray-500 mb-1">{{ field.help_text|safe }}</p>
         {% endif %}
         {% if field.errors %}
-          <div class="text-red-600 text-sm mb-2">{{ field.errors }}</div>
+          <div class="text-red-600 text-sm mb-2 bg-red-50 p-2 rounded">{{ field.errors }}</div>
         {% endif %}
         {{ field }}
-        <style>
-          .fieldWrapper input, .fieldWrapper textarea, .fieldWrapper select {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-          }
-          .fieldWrapper input:focus, .fieldWrapper textarea:focus, .fieldWrapper select:focus {
-            outline: none;
-            ring: 2px;
-            ring-color: #3b82f6;
-            border-color: transparent;
-          }
-        </style>
       </div>
     {% endfor %}
   </div>
